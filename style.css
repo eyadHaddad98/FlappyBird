@@ -1,0 +1,71 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('backGroundFlappyBrid2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.title {
+    z-index: 10;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    margin: 0;
+    flex-direction: column;
+}
+
+.subtitle {
+    margin-top: .5rem;
+}
+
+.hide {
+    display: none;
+}
+
+.bird {
+    --bird-top : -1000;
+    --bird-size : 45px;
+    position: absolute;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-image:url('flappyBird.png');
+    width: var(--bird-size);
+    height: var(--bird-size);
+    left: var(--bird-size);
+    top: calc(var(--bird-top) * 1px);
+    border-radius: 50%;
+}
+
+.pipe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(var(--pipe-width)* 1px);
+    left: calc(var(--pipe-left)* 1px);
+}
+
+.pipe > .segment {
+    position: absolute;
+    width: 100%;
+    background-color: 	rgb(3,192,60)
+}
+
+.pipe > .top {
+    top: 0;
+    bottom: calc(var(--hole-top)* 1px);
+}
+
+.pipe > .bottom {
+    bottom: 0;
+    top: calc(100vh - (var(--hole-top) * 1px) + calc(var(--hole-height) * 1px));
+}
